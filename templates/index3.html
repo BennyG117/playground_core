@@ -14,7 +14,7 @@
     <link rel="stylesheet"
         type="text/css"
         href="{{ url_for('static', filename='style.css') }}">
-    {# do my css in style (below) #}
+    {# can do my css in style (below), or use bootstrap, or connect css #}
     <style>
 
     </style>
@@ -35,10 +35,13 @@
             </form>
             {# Container div for boxes row #}
             <form class="box-container row-2">
+                {# Loop starts for x (aka num input from server.py) #}
                 {% for i in range(x) %}
                 <div>
+                    {# including box class into another div within the loop to assign color based on the color input from server.py#}
                     <div class="boxes1"
-                        style="background-color: {{color}}"></div>
+                        style="background-color: {{color}}">
+                    </div>
                 </div>
                 {% endfor %}
             </form>
